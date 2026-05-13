@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <title>Agendar Cita - Virtual Vet</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        <img src="img/logo.png" alt="Virtual Vet">
+    </div>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="agendar.html">Agendar</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<!-- FORMULARIO -->
+<main>
+    <section class="formulario">
+        <h1>Agendar Cita</h1>
+        <p>Completa el formulario para reservar un servicio</p>
+
+        <form action="confirmacion.html">
+
+            <label>Nombre del dueño:</label>
+            <input type="text" placeholder="Tu nombre" required>
+
+            <label>Nombre de la mascota:</label>
+            <input type="text" placeholder="Nombre de tu mascota" required>
+
+            <label>Tipo de servicio:</label>
+            <select required>
+                <option>Consulta Veterinaria</option>
+                <option>Vacunación</option>
+                <option>Grooming</option>
+                <option>Desparasitación</option>
+            </select>
+
+            <label>Fecha:</label>
+            <input type="date" required>
+
+            <label>Hora:</label>
+            <input type="time" required>
+
+            <label>Dirección:</label>
+            <input type="text" placeholder="Dirección del servicio" required>
+
+            <button type="submit">Confirmar Cita</button>
+
+        </form>
+    </section>
+</main>
+    
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 Virtual Vet - Cuidamos lo que te cuida</p>
+</footer>
+
+<script>
+    // Obtener parámetros de la URL
+    const params = new URLSearchParams(window.location.search);
+    const servicio = params.get("servicio");
+
+    // Seleccionar automáticamente
+    if (servicio) {
+        document.getElementById("servicio").value = servicio;
+    }
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>
